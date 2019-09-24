@@ -16,7 +16,6 @@ class MontyHall:
     self.labels = []
     self.sizes = []
     self.colors = ['lightskyblue', 'lightcoral']
-    self.explode = (0,0)                          # all slices look equal
   def num_iterations(self):
     while self.num < 1:
       try:
@@ -46,6 +45,7 @@ class MontyHall:
           self.winning_door = random.randint(1,3)
           if self.winning_door == self.chosen_door:
             self.counter += 1
+    print('There were a total of ' + str(self.counter) + ' wins out of a total ' + str(self.num) + ' games.')
 
   def displayPieChart(self):
     print("the program reached this line")
@@ -53,7 +53,7 @@ class MontyHall:
     self.labels = ['Wins', 'Loses']
     self.sizes = [self.counter, self.num - self.counter]
     # plot
-    plt.pie(self.sizes, explode = self.explode, labels = self.labels, colors = self.colors)
+    plt.pie(self.sizes, labels = self.labels, colors = self.colors, autopct='%1.1f%%')
     plt.axis('equal')
     plt.show()
 
