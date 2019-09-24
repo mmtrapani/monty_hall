@@ -16,6 +16,7 @@ class MontyHall:
     self.labels = []
     self.sizes = []
     self.colors = ['lightskyblue', 'lightcoral']
+
   def num_iterations(self):
     while self.num < 1:
       try:
@@ -48,7 +49,6 @@ class MontyHall:
     print('There were a total of ' + str(self.counter) + ' wins out of a total ' + str(self.num) + ' games.')
 
   def displayPieChart(self):
-    print("the program reached this line")
     #data to plot
     self.labels = ['Wins', 'Loses']
     self.sizes = [self.counter, self.num - self.counter]
